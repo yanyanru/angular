@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>搜索你喜欢的</title>
+	<meta name="viewport" content="width=device-width,initial-scale=2,maximum-scale=1,user-scalable=no">
+    <link type="text/css" rel="stylesheet" href="css/reset.css">
+    <link type="text/css" rel="stylesheet" href="css/iconfont.css">
+    <link type="text/css" rel="stylesheet" href="css/common.css">
+    <link type="text/css" rel="stylesheet" href="css/seek.css">
+</head>
+<body>
+	<header class="seek-header">
+		<div></div>
+		<div>
+			<i class="icon iconfont icon-sousuo2"></i>
+			<input type="text" placeholder="搜你感兴趣的内容和明星">
+		</div>
+		<div>取消</div>
+	</header>
+	<div class="seek-content">
+		<div class="hot">
+			<p>大家都在搜</p>
+			<div class="list">
+
+			</div>
+		</div>
+	</div>
+	<script src="js/libs/zepto.js"></script>
+	<script>
+		$.ajax({
+			url:"data/seek.json",
+			success:function(data){
+				var str=""
+				$.each(data.data,function(i,d){
+					console.log(d.title)
+					str+=`<span>${d.title}</span>`
+				})
+				$(".list").append(str)
+			}
+		})
+	</script>
+</body>
+</html>

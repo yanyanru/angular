@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>加入明星娱乐圈子</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=2,maximum-scale=1,user-scalable=no">
+    <link type="text/css" rel="stylesheet" href="css/reset.css">
+    <link type="text/css" rel="stylesheet" href="css/common.css">
+    <link type="text/css" rel="stylesheet" href="css/iconfont.css">
+    <link type="text/css" rel="stylesheet" href="css/startCicle.css">
+</head>
+<body>
+    <header class="startCicle-header">
+         <button>确认</button>
+         <span>加入明星娱乐圈子</span>
+         <button>取消</button>
+    </header>
+    <div class="startCicle-content">
+        <div class="content-banner">
+            <img src="images/banner/sc_banner.jpg" alt="">
+        </div>
+        <ul class="content-list">
+           <!-- ajax 渲染 -->
+        </ul>
+    </div>
+    <script type="text/javascript" src="js/libs/zepto.js"></script>
+    <script type="text/javascript">
+        $.ajax({
+            url:"data/startCircle.json",
+            success:function(res){
+                var str = "";
+                if(res.isSuccess &&　res.errorCode == 0){
+                    $.each(res.data,function(i,n){
+                        str +=  `<li>
+                                    <a href="#">
+                                        <span><img src="${n.src}" alt=""></span>
+                                        <b>${n.username}</b>
+                                    </a>
+                                </li>`
+                    })
+                    $(".content-list").append(str)
+                }
+               
+            }
+        })
+    </script>
+</body>
+</html>

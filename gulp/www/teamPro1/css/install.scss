@@ -1,0 +1,90 @@
+body{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  display: -webkit-flex;
+  -webkit-flex-direction: column;
+  font-size: .14rem;
+  color: #333;
+}
+.install-header{
+  width:100%;
+  height:.45rem;
+  line-height: .45rem;
+  background: #f7f7f7;
+  display: flex;
+  justify-content: space-between;
+  a{
+    margin:0 .1rem;
+    font-size: 16px;
+    color:#000;
+  }
+}
+
+.install-content{
+  background:#f3f2f8;
+  flex:1;
+  overflow-y: hidden;
+  .content-list{
+    width:100%;
+    height:.97rem;
+    background:#fff;
+    h3{
+      width:90%;
+      margin :0 auto;
+      height: .48rem;
+      line-height: .48rem;
+      border-bottom: 1px solid #ccc;
+      display: flex;
+      justify-content:space-between;
+      font-weight: 100;
+      span{
+        font-size:.16rem;
+        color: #000;
+      }
+      em{
+        font-style: normal;
+        color:#9a99a1;
+        font-size: .14rem;
+        .icon{
+          font-size: 0.12rem;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+.about{
+  padding-top: 16px;
+}
+  .content-set{
+    width:100%;
+    height:.45rem;
+    background:#f3f2f8;
+    p{
+      width:90%;
+      margin :0 auto;
+      font-size: .1rem;
+      padding-top: .08rem;
+      color:#9a99a1;
+    }
+  }
+.content-btn{
+  width:84%;
+  margin:0 auto;
+  border:1px solid #ad97cd;
+  margin-top: .23rem;
+  button{
+    width:100%;
+    height:.34rem;
+    outline:none;
+    border: 0;
+    color:#90879d;
+    background: transparent;
+  }
+}
+}
+
+
+
+

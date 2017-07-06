@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=2,maximum-scale=1,user-scalable=no">
+    <link type="text/css" rel="stylesheet" href="css/reset.css">
+    <link type="text/css" rel="stylesheet" href="css/iconfont.css">
+    <link type="text/css" rel="stylesheet" href="css/swiper.min.css">
+    <link type="text/css" rel="stylesheet" href="css/common.css">
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="userSearch-header">
+    <div class="title">
+        <input type="text" class="search" placeholder="田馥甄">
+        <i class="icon iconfont icon-gengduo1"></i>
+        <span>取消</span>
+    </div>
+    <div class="nav">
+        <div id="wrapper">
+            <ul class="nav-list">
+                <li class="action"><a href="javascript:void(0);">综合</a><div class="line"></div></li>
+                <li><a href="javascript:void(0);">帖子</a></li>
+                <li><a href="javascript:void(0);">相册</a></li>
+                <li><a href="javascript:void(0);">用户</a></li>
+                <li><a href="javascript:void(0);">视频</a></li>
+                <li><a href="javascript:void(0);">...</a></li>
+            </ul>
+
+        </div>
+    </div>
+</header>
+<div class="userSearch-content">
+    <div class="swiper-container content-wrap">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide global">
+                <div class="search-result">
+                    <a href="javascript:;" class="each-result">
+                        <!--<dl class="video">
+                            <dt><img src="images/photos/tianfu_03.jpg" alt=""></dt>
+                            <dd>
+                                <h3>十万嬉皮（live版）</h3>
+                                <div><i class="icon iconfont icon-mv"></i>田馥甄</div>
+                            </dd>
+                        </dl>-->
+                        <!--<dl class="route">
+                            <dt><img src="images/photos/tianfu_03.jpg" alt=""></dt>
+                            <dd>
+                                <h3><span>田馥甄</span> oppo臻爱粉丝见面会</h3>
+                                <div>
+                                    <p>来自田馥甄的圈子</p>
+                                    <span><i class="icon iconfont icon-icon0723xie"></i>264</span>
+                                </div>
+                            </dd>
+                        </dl>-->
+                        <!--<dl class="pics">
+                            <dt><img src="images/photos/tianfu_03.jpg" alt=""></dt>
+                            <dd>
+                                <h3>节目</h3>
+                                <div>
+                                    <p>田馥甄</p>
+                                    <span><i class="icon iconfont icon-tuwen"></i>32</span>
+                                </div>
+                            </dd>
+                        </dl>-->
+                        <!--<dl class="user">
+                            <dt><img src="images/photos/tianfu_03.jpg" alt=""></dt>
+                            <dd>
+                                <h3>田馥甄<span>1123</span></h3>
+                                <div>被关注：<span>1</span></div>
+                            </dd>
+                        </dl>-->
+                        <!--<dl class="invit">
+                            <dt><img src="images/photos/tianfu_03.jpg" alt=""></dt>
+                            <dd>
+                                <h3><span>田馥甄</span> oppo臻爱粉丝见面会</h3>
+                                <div>
+                                    <p>来自田馥甄的圈子</p>
+                                    <span><i class="icon iconfont icon-yanjing3"></i>3</span>
+                                </div>
+                            </dd>
+                        </dl>-->
+                        <!--<dl class="global-one">
+                            <dt><img src="images/photos/tianfu_03.jpg" alt=""></dt>
+                            <dd>
+                                <h3>田馥甄</h3>
+                                <div>粉丝数：<span>436757</span></div>
+                            </dd>
+                        </dl>-->
+
+                        <!--<dl class="global">
+                            <dt><img src="images/photos/tianfu_03.jpg" alt=""></dt>
+                            <dd>
+                                <h3><span>田馥甄</span> oppo臻爱粉丝见面会</h3>
+                                <div>
+                                    <p>来自田馥甄的圈子</p>
+                                    <span>01-22 19:28</span>
+                                </div>
+                            </dd>
+                        </dl>-->
+
+
+
+                    </a>
+                </div>
+            </div>
+            <div class="swiper-slide invit">222</div>
+            <div class="swiper-slide pic">333</div>
+            <div class="swiper-slide user">555</div>
+            <div class="swiper-slide video">666</div>
+            <div class="swiper-slide global"></div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="js/libs/iscroll.js"></script>
+<script type="text/javascript" src="js/libs/swiper.min.js"></script>
+<script type="text/javascript" src="js/libs/zepto.js"></script>
+<script type="text/javascript" src="js/tianfuzhenInit.js"></script>
+<script type="text/javascript">
+
+    //页面初始化设置导航栏下划线位置
+    var lineLeft = $(".nav-list a").eq(0)[0].offsetLeft+5+"px"
+    $(".line").css("left", lineLeft)
+
+
+
+    var touch,
+        startX,
+        endX,
+        pageSwiper,
+        navList,
+        ind = 0,
+        navInd = 0,
+        len = $(".nav-list li").length -1;
+
+
+
+
+    navList = new IScroll("#wrapper",{
+        scrollX:true,
+        scrollY:false
+    })
+    pageSwiper = new Swiper(".content-wrap",{
+        onTouchStart: function(swiper,event){
+            touch = event.touches[0];
+            startX = touch.pageX;
+        },
+        onTouchMove: function(swiper,event){
+            touch = event.touches[0];
+            endX = touch.pageX-startX;
+        },
+        onTouchEnd: function(swiper){
+            if(endX > 10){
+                ind = ind-1
+            }else if(endX <-10){
+                ind = ind+1
+            }
+            if(ind <= 0){
+                ind = 0
+            }else if(ind >= len ){
+                ind = len
+            }
+            navSlide(ind)
+            if(ind>3 || ind<3){
+                navList.scrollToElement($(".nav-list li").eq(ind).find("a")[0])
+            }
+        }
+    })
+
+
+    $(".nav-list").on("click","a",function(){
+        var index = $(this).parent().index();
+        pageSwiper.slideTo(index)
+        navSlide(index)
+        ind = index;
+    })
+
+
+    function navSlide(ind){
+
+        lineLeft = $(".nav-list li").eq(ind).find("a")[0].offsetLeft+5;
+        $(".nav-list li").eq(ind).addClass("action").siblings().removeClass("action")
+        $(".line").css("left",lineLeft+"px")
+    }
+
+
+
+</script>
+</body>
+</html>

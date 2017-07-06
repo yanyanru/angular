@@ -1,0 +1,60 @@
+body{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  display: -webkit-flex;
+  -webkit-flex-direction: column;
+  font-size: .14rem;
+  color: #333;
+}
+.celebrity-header{
+  width:100%;
+  height:.45rem;
+  line-height: .45rem;
+  background: #f7f7f7;
+  display: flex;
+  justify-content: space-between;
+
+  a{
+    margin:0 .1rem;
+    font-size: 16px;
+    color:#000;
+  }
+}
+
+.celebrity-content{
+  -webkit-flex:1;
+  overflow-y: hidden;
+.content-list{
+  width:100%;
+  dl{
+    width:96%;
+    margin:0  0 0 4%;
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    padding-top: 14px;
+    padding-bottom:20px;
+    dt{
+      img{
+        width:.8rem;
+        height:.8rem;
+      }
+    }
+    dd{
+      position: relative;
+      margin-left: 15px;
+      width: 100%;
+     h2{
+       font-size: .14rem;
+       padding-right:.27rem;
+     }
+      p{
+        position: absolute;
+        right:27px;
+        bottom:10px;
+      }
+    }
+  }
+}
+}

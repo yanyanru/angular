@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=2,maximum-scale=1,user-scalable=no">
+    <link type="text/css" rel="stylesheet" href="css/reset.css">
+    <link type="text/css" rel="stylesheet" href="css/iconfont.css">
+    <link type="text/css" rel="stylesheet" href="css/common.css">
+    <link type="text/css" rel="stylesheet" href="css/searchTian.css">
+</head>
+<body>
+    <header class="searchTian-header">
+        <div class="search">
+            <input type="text" placeholder='田馥甄'>
+            <i class="icon iconfont icon-sousuo2"></i>
+        </div>
+        <span>取消</span>
+    </header>
+    <div class="searchTian-content">
+        <ul class="nav">
+            <li><a href="javascript:;">综合</a></li>
+            <li><a href="javascript:;">话题</a></li>
+            <li><a href="javascript:;">帖子</a></li>
+            <li><a href="javascript:;">视频</a></li>
+            <li><a href="javascript:;" class='on'>相册</a></li>
+        </ul>
+        <div class="list">
+        <!--     <dl>
+                <dt><img src="images/imgs/pic_01.jpg" alt="节目"></dt>
+                <dd>
+                    <h4>节目</h4>
+                    <span>田馥甄</span>
+                    <p>
+                        <i class="icon iconfont icon-iconfonttuwen"></i>
+                        <strong>32</strong>
+                    </p>
+                </dd>
+            </dl>
+             <dl>
+                <dt><img src="images/imgs/pic_02.jpg" alt="节目"></dt>
+                <dd>
+                    <h4>接送机</h4>
+                    <span>田馥甄</span>
+                    <p>
+                        <i class="icon iconfont icon-iconfonttuwen"></i>
+                        <strong>1</strong>
+                    </p>
+                </dd>
+            </dl>
+             <dl>
+                <dt><img src="images/imgs/pic_03.jpg" alt="节目"></dt>
+                <dd>
+                    <h4>杂志/专访</h4>
+                    <span>田馥甄</span>
+                    <p>
+                        <i class="icon iconfont icon-iconfonttuwen"></i>
+                        <strong>80</strong>
+                    </p>
+                </dd>
+            </dl> -->
+        </div>
+    </div>
+    <script type='text/javascript' src='js/libs/zepto.js'></script>
+    <script type='text/javascript'>
+    $.ajax({
+        url:'data/searchTian.json',
+        success:function(rt){
+            if(rt.isSuccess && !rt.errorCode){
+                var str='';
+                $.each(rt.data,function(i,n){
+                    str+='<dl>'+
+                    '<dt><img src="'+n.src+'" alt="'+n.title+'"></dt>'+
+                    '<dd>'+
+                        '<h4>'+n.title+'</h4>'+
+                        '<span>'+n.name+'</span>'+
+                        '<p>'+
+                            '<i class="icon iconfont icon-iconfonttuwen"></i>'+
+                            '<strong>'+n.num+'</strong>'+
+                        '</p>'+
+                    '</dd>'+
+                '</dl>';
+                })
+                $('.list').html(str);
+            }
+        }
+    })
+    </script>
+
+</body>
+</html>

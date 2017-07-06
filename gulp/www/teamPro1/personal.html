@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=2,maximum-scale=1,user-scalable=no">
+    <link type="text/css" rel="stylesheet" href="css/reset.css">
+    <link type="text/css" rel="stylesheet" href="css/iconfont.css">
+    <link type="text/css" rel="stylesheet" href="css/common.css">
+    <link type="text/css" rel="stylesheet" href="css/personal.css">
+
+</head>
+<body>
+    <header class="personal-header">
+        <div class="title">
+             <span class="left">
+               <i class="icon iconfont icon-jiantou-copy"></i>
+            </span>
+            <span>
+                金雯昕
+            </span>
+            <span class="right">
+                <i class="icon iconfont icon-gengduo"></i>
+            </span>
+        </div>
+        <div class="list">
+            <a href="#">
+                首页
+            </a>
+            <a href="#">
+                应援
+            </a>
+            <a href="#">
+                社区
+            </a>
+            <a href="#" class="on">
+                资源库
+            </a>
+            <a href="#">
+                心情
+            </a>
+        </div>
+    </header>
+    <div class="personal-content">
+            <p>相册</p>
+            <ul class="personal-ul"></ul>
+        </div>
+
+    <footer class="personal-footer">
+        <span class="left">
+            视频
+        </span>
+        <div class="gengduo">
+            <span>
+                <i class="icon iconfont icon-gengduo1"></i>
+            </span>
+        </div>
+        <span class="right">
+           更多<i class="icon iconfont icon-iconfontgengduo"></i>
+        </span>
+    </footer>
+    <script src="js/libs/zepto.js"></script>
+    <script>
+        function personal(){
+            $.ajax({
+                url:"data/tianfuzhenS.json",
+                success:function(result){
+                    if(!result.errorCode){
+                        var personal = result.data,
+                            str=""
+                        $(personal).each(function(i,item){
+                            str +=" <li>"+
+                                    "<a href='#'>"+
+                            "<span><img src='images/imgs/"+item.src+"' alt=''></span>"+
+                            "</a>"+
+                            "<p>"+item.title+"</p>"+
+                            "</li>"
+                        })
+                        $(".personal-ul").append(str)
+                    }
+                }
+            })
+        }
+        personal()
+    </script>
+</body>
+</html>

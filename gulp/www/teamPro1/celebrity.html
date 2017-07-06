@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>明星资讯</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=2,maximum-scale=1,user-scalable=no">
+    <link type="text/css" rel="stylesheet" href="css/reset.css">
+    <link type="text/css" rel="stylesheet" href="css/iconfont.css">
+    <link type="text/css" rel="stylesheet" href="css/common.css">
+    <link type="text/css" rel="stylesheet" href="css/celebrity.css">
+</head>
+<body>
+    <header class="celebrity-header">
+        <a href=""><i class="icon iconfont icon-jiantou-copy"></i></a>
+        <a href="">明星资讯</a>
+        <a href=""><i class="icon iconfont icon-gengduo"></i></a>
+    </header>
+    <div class="celebrity-content">
+        <div class="content-list">
+            <!--<dl>
+                <dt><img src="images/imgs/list_01.jpg"></dt>
+                <dd>
+                    <h2>张翰和剧组好友聚餐喝酒面露微笑帅气不减</h2>
+                    <p>58分钟</p>
+                </dd>
+            </dl>-->
+
+        </div>
+       
+    </div>
+    <footer class="celebrity-footer">
+    </footer>
+    <script type="text/javascript" src="js/libs/zepto.js"></script>
+    <script type="text/javascript">
+        $.ajax({
+            url:"data/celebrity.json",
+            success:function(result){
+                var str = "";
+                if(result.isSuccess && result.errorCode==0){
+                    $.each(result.data,function(i,n){
+                        str += "<dl>"+
+                                 "<dt>"+"<img src="+n.src+">"+"</dt>"+
+                                    "<dd>"+
+                                        "<h2>"+n.matter+"</h2>"+
+                                        "<p>"+n.time+"</p>"+
+                                     "</dd>"+
+                                 "</dl> "
+
+                    })
+
+                }
+                $(".content-list").html(str)
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.red{
+			color:#f00;
+		}
+		.blue{
+			color:blue;
+		}
+		.show{
+			width:100px;
+			height:20px;
+			background:#f56;
+			display:none;
+		}
+		.border{
+			width:140px;
+			border:1px solid #ccc;
+		}
+	</style>
+</head>
+<body>
+	<div ng-app='myapp' ng-controller='mytrol'>
+		<input type="text" placeholder='请输入用户名' ng-model="name">
+		<input type="text" placeholder='请输入密码' ng-model="pwd">
+		<p>用户名：{{name}}</p>
+		<p>密码：{{pwd}}</p>
+		<p ng-bind="pwd">这是密码2：</p>
+		<p ng-class="blue">这是蓝色</p>
+		<p ng-class="red">这是红色</p>
+		<button ng-click="count = count + 1" ng-init="count=0">OK</button>
+		<p>点击了{{count}}次</p>
+		<div ng-show="true">显示div</div>
+		<div ng-show="false">隐藏div</div>
+		<div ng-hide="true">隐藏div2</div>
+		<div ng-hide="false">显示div2</div>
+		<div ng-repeat="arr in arrs" ng-class="border">
+			<p>循环遍历数组</p>
+			<span>
+				姓名：{{arr.name}}
+				<br>
+				性别：{{arr.gender}}
+			</span>
+		</div>
+	</div>
+	<script type='text/javascript' src='js/angular.js'></script>
+	<script type='text/javascript'>
+	var app = angular.module('myapp',[]);
+	app.controller('mytrol',function($scope){
+		$scope.name = "1505f";
+		$scope.pwd = "123";
+		$scope.red = "red";
+		$scope.blue = "blue";
+		$scope.show="show";
+		$scope.border="border";
+		$scope.arrs =  [
+			{"name":"haha","gender":"女"},
+			{"name":"honey","gender":"男"},
+			{"name":"mary","gender":"女"}
+		]
+	})
+	</script>
+</body>
+</html>

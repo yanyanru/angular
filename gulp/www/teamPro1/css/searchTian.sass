@@ -1,0 +1,90 @@
+body
+	position: absolute
+	top: 0
+	bottom: 0
+	width: 100%
+	display: -webkit-flex
+	-webkit-flex-direction: column
+	font-size: .14rem
+	color: #333
+.searchTian-header
+	height: .45rem
+	padding: 0 .1rem
+	display: flex
+	background: #F7F7F7
+	border-bottom: 1px solid #ECECEC
+	span
+		width: .39rem
+		padding-top: .14rem
+		font-size: .12rem
+		color: #010101
+		text-align: right
+	.search
+		flex: 1
+		display: flex
+		position: relative
+		margin-top: 8px
+		input
+			height: .25rem
+			flex: 1
+			border: none
+			border: 1px solid #ECECEC
+			padding-left: .12rem
+		.icon
+			position: absolute
+			right: 3px
+			top: 6px
+.searchTian-content
+	flex: 1
+	oveflow-y: scroll
+	background: #F3F2F8
+	.nav
+		height: .43rem 
+		line-height: .43rem
+		display: flex
+		background: #F7F7F7
+		border: 1px solid #ECECEC
+		li
+			flex: 1
+			text-align: center
+			a
+				color: #979799
+				padding-bottom: 11px
+				&.on
+					color: #724EEE
+					border-bottom: 1px solid #724EEE
+	.list
+		background: #fff
+		dl
+			height: .92rem
+			display: flex
+			border-bottom: 1px solid #F0F0F0
+			dt
+				width: .96rem
+				height: .92rem
+				padding-top: 7px
+				padding-right: .1rem
+				padding-bottom: .13rem
+				padding-left: .14rem
+				box-sizing: border-box
+			dd
+				flex: 1
+				h4
+					padding-top: 7px
+					height: .22rem
+					line-height: .22rem
+					font-size: .14rem
+				
+				span
+					color: #47464E
+					display: block
+					font-size: .14rem
+					padding-top: .1rem
+				p
+					.icon
+						font-size: .14rem
+						color: #88888A
+					strong
+						color: #202020
+						font-size: .14rem
+						font-weight: normal

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=2,maximum-scale=1,user-scalable=no">
+    <link type="text/css" rel="stylesheet" href="css/reset.css">
+    <link type="text/css" rel="stylesheet" href="css/iconfont.css">
+    <link type="text/css" rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/search.css">
+    <title></title>
+</head>
+<body>
+    <header class="header">
+        <input type="search" value="田馥甄">
+        <a href="javascript:;" class="btn">取消</a>
+    </header>
+    <div class="content">
+        <ul class="nav">
+            <li class="li1">综合</li>
+            <li class="li2">话题</li>
+            <li class="li3">帖子</li>
+            <li class="li4">视频</li>
+            <li class="li5">相册</li>
+            <p><a href="javascript:;"></a></p>
+        </ul>
+        <div class="list"></div>
+    </div>
+    <script type="text/javascript" src='./js/libs/zepto.js'></script>
+<script>
+       $.ajax({
+           url:"data/searchs.json",
+           type:'GET',
+           success:function (data) {
+            var str ="";
+                $.each(data,function (i,val) {
+                    $.each(val,function (i,v) {
+                        if(v.mv){
+                            str += "<dl><dt><img src='"+v.img+"'></dt><dd><h3>"+v.song+"</h3><p><i class='icon iconfont icon-mv'></i><span>"+v.name+"</span></p></dd></dl>";
+                        }else{
+                            str+="<dl><dt><img src='"+v.img+"'></dt><dd><h3>"+v.song+"</h3><p><span>"+v.name+"</span></p></dd></dl>";
+                        }
+
+                    })
+                })
+                $('.list').append(str);
+           }
+       })
+</script>
+</body>
+</html>

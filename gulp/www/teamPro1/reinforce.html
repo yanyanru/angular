@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>人气应援</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=2,maximum-scale=1,user-scalable=no">
+    <link type="text/css" rel="stylesheet" href="css/reset.css">
+    <link type="text/css" rel="stylesheet" href="css/iconfont.css">
+    <link type="text/css" rel="stylesheet" href="css/common.css">
+    <link type="text/css" rel="stylesheet" href="css/reinforce.css">
+</head>
+<body>
+    <header class="index-header">
+        <i class="icon iconfont icon-naoling ic"></i>
+        <div>
+            <i class="icon iconfont icon-sousuo"></i><input type="text" placeholder="搜你感兴趣的内容和明星">
+        </div>
+        <i class="icon iconfont icon-rli1 ic"></i>
+    </header>
+    <div class="index-content">
+        <div class="moods">
+            <div></div>
+            <div>
+                <span>--</span>
+                <span>人气应援</span>
+                <span>--</span>
+            </div>
+            <div><span>更多<i class="icon iconfont icon-iconfontgengduo"></i></span></div>
+        </div>
+        <div class="list">
+            <ul>
+                <!-- <li>
+                    <dl>
+                        <dt><img src="images/photos/make_01.jpg" alt=""></dt>
+                        <dd>
+                            <p>来回答问题了</p>
+                            <p><i class="icon iconfont icon-iconfontjifen2"></i>积分+2</p>
+                            <p>来自Rita黄汐源的圈子</p>
+                        </dd>
+                    </dl>
+                </li> -->
+            </ul>
+        </div>
+    </div>
+    <footer class="footer">
+        <dl>
+            <dt><i class="icon iconfont icon-xiaolian1"></i></dt>
+            <dd>喜欢</dd>
+        </dl>
+        <dl>
+            <dt><i class="icon iconfont icon-rli"></i></dt>
+            <dd>收藏</dd>
+        </dl>
+        <dl>
+            <dt><i class='icon iconfont icon-yuanquan'></i></dt>
+            <dd>朋友圈</dd>
+        </dl>
+        <dl>
+            <dt><i class="icon iconfont icon-wode"></i></dt>
+            <dd>我的</dd>
+        </dl>
+    </footer>
+    <script src="js/libs/zepto.js"></script>
+    <script>
+        $.ajax({
+            url:"data/index.json",
+            success:function(data){
+                var str=""
+                $.each(data.data,function(i,d){
+                    str+=`<li>
+                            <dl>
+                                <dt><img src=${d.src} alt=""></dt>
+                                <dd>
+                                    <p>${d.title}</p>
+                                    <p><i class="icon iconfont icon-iconfontjifen2"></i>积分+${d.num}</p>
+                                    <p>${d.matter}</p>
+                                </dd>
+                            </dl>
+                        </li>`
+                })
+                $("ul").append(str)
+            }
+        })
+    </script>
+</body>
+</html>

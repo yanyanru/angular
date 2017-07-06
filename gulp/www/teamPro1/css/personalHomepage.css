@@ -1,0 +1,74 @@
+body {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  display: -webkit-flex;
+  -webkit-flex-direction: column;
+  font-size: 0.14rem;
+  color: #333;
+  background: #f7f7f7; }
+
+.personalHomepage-header {
+  display: -webkit-flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.1rem;
+  font-size: 0.16rem;
+  height: 0.45rem;
+  color: #000; }
+  .personalHomepage-header .icon {
+    color: #000; }
+
+.personalHomepage-content {
+  -webkit-flex: 1;
+  overflow-y: scroll;
+  display: -webkit-flex;
+  -webkit-flex-direction: column; }
+  .personalHomepage-content .content-info {
+    height: 1.3rem;
+    background: #fff;
+    padding: 0.15rem 0.1rem 0; }
+    .personalHomepage-content .content-info p {
+      display: -webkit-flex;
+      justify-content: space-between;
+      height: 0.55rem; }
+      .personalHomepage-content .content-info p .icon {
+        color: #7867ae;
+        margin-top: 0.1rem; }
+      .personalHomepage-content .content-info p span {
+        width: 0.55rem;
+        height: 0.55rem;
+        position: relative; }
+        .personalHomepage-content .content-info p span img {
+          width: 100%;
+          height: 100%; }
+        .personalHomepage-content .content-info p span b {
+          position: absolute;
+          right: -0.4rem;
+          top: 0.05rem; }
+    .personalHomepage-content .content-info ul {
+      display: -webkit-flex; }
+      .personalHomepage-content .content-info ul > li {
+        -webkit-flex: 1;
+        padding: 0.15rem 0;
+        text-align: center; }
+        .personalHomepage-content .content-info ul > li a span {
+          display: block;
+          color: #000;
+          position: relative; }
+          .personalHomepage-content .content-info ul > li a span i {
+            display: block;
+            height: 0.2rem;
+            position: absolute;
+            right: -0.05rem;
+            border-right: 1px solid #ccc; }
+        .personalHomepage-content .content-info ul > li a em {
+          font-style: normal;
+          font-size: 0.12rem; }
+  .personalHomepage-content .content-bg {
+    -webkit-flex: 1;
+    background: url(../images/photos/ph_bj_06.jpg) no-repeat;
+    background-size: 100% 100%; }
+
+/*# sourceMappingURL=personalHomepage.css.map */

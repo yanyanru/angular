@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>手机账号登录</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=2,maximum-scale=1,user-scalable=no">
+    <link type="text/css" rel="stylesheet" href="css/reset.css">
+    <link type="text/css" rel="stylesheet" href="css/common.css">
+    <link type="text/css" rel="stylesheet" href="css/iconfont.css">
+    <link type="text/css" rel="stylesheet" href="css/phoneLogin.css">
+</head>
+<body>
+    <header class="phoneLogin-header">
+         <i class="icon iconfont icon-jiantou-copy"></i>
+         <span>手机账号登录</span>
+         <i class="icon iconfont icon-wenhao"></i>
+    </header>
+    <div class="phoneLogin-content">
+        <div class="content-banner">
+            <img src="images/banner/pl_banner_02.jpg" alt="">
+        </div>
+        <div class="content-login">
+            <p class="telNumber">
+                <span id='select'>+86 <i class="icon iconfont icon-bArrows"></i></span>
+                <span><input type="text" placeholder="请输入手机号"></span>
+            </p>
+            <p class='pwd'>
+                <input type="password" placeholder="请输入密码">
+            </p>
+            <button class="forget">忘记密码</button>
+            <div class='moveLogin'>
+                <button class='moveLogin-bottom'>向右滑动登录</button>
+                <span class='moveLogin-top'><i class="icon iconfont icon-iconfontgengduo"></i></span>
+            </div>
+            <p class='loginNew'>注册新账号</p>
+            <ul class="number">
+                <li>135</li>
+                <li>136</li>
+                <li>154</li>
+                <li>111</li>
+            </ul>
+        </div>
+    </div>
+    <script src="js/libs/zepto.js"></script>
+    <script>
+        $("#select").on("touchstart",function(){
+            $(".number").show()
+        })
+        $(".content-login li").on("touchstart",function(){
+            $(this).parent("ul").remove()
+        })
+        $(".moveLogin").on("touchstart",function(){
+            $(".moveLogin-top").css("left","85%");
+            $(".moveLogin-bottom").text("登录中")
+        })
+    </script>
+</body>
+</html>
